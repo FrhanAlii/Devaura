@@ -1,0 +1,374 @@
+@import "tailwindcss";
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+/* Custom scrollbar */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* This accounts for the fixed navbar height */
+}
+
+/* Section focus animation */
+.section-focus {
+  animation: sectionFocus 0.5s ease-in-out;
+}
+
+@keyframes sectionFocus {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #0e0e0e;
+  color: #e0e0e0;
+}
+
+body.dark-mode section {
+  background-color: #0e0e0e;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f0f0f0;
+}
+
+body.dark-mode p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .bg-white {
+  background-color: #1a1a1a !important;
+}
+
+body.dark-mode .text-gray-800,
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-600 {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .bg-gray-50 {
+  background-color: #161616 !important;
+}
+
+/* Card and shadow adjustments */
+body.dark-mode .shadow-lg,
+body.dark-mode .shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05),
+              0 2px 4px -1px rgba(255, 255, 255, 0.03) !important;
+}
+
+body.dark-mode .hover\:shadow-lg:hover,
+body.dark-mode .hover\:shadow-xl:hover {
+  box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.08),
+              0 4px 6px -2px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Border color adjustments */
+body.dark-mode .border-gray-300 {
+  border-color: #2a2a2a !important;
+}
+
+/* Input field adjustments */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #1a1a1a !important;
+  border-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Button adjustments */
+body.dark-mode .bg-gradient-to-r {
+  background-image: linear-gradient(to right, #1a1a1a, #2a2a2a) !important;
+}
+
+body.dark-mode .hover\:bg-gradient-to-r:hover {
+  background-image: linear-gradient(to right, #2a2a2a, #3a3a3a) !important;
+}
+
+/* Card gradients */
+body.dark-mode .bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, #1a1a1a, #2a2a2a) !important;
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Smooth transitions for theme changes */
+body,
+nav,
+section,
+h1, h2, h3, h4, h5, h6,
+p,
+a,
+button,
+input,
+select,
+textarea,
+.shadow-lg,
+.shadow-md,
+.hover\:shadow-lg,
+.hover\:shadow-xl {
+  transition: all 0.3s ease;
+}
+
+/* iOS 26 Beta 1 Glass Effect Styles */
+.navbar-glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 24px;
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.5),
+              0 4px 30px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(255,255,255,0.08);
+  padding: 0.6rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: fit-content;
+  margin: auto;
+}
+
+body.dark-mode .navbar-glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.2),
+              0 4px 30px rgba(0, 0, 0, 0.2),
+              0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.theme-toggle-glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.5),
+              0 4px 20px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(255,255,255,0.08);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-glass:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.15));
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.6),
+              0 6px 25px rgba(0, 0, 0, 0.15),
+              0 0 0 1px rgba(255,255,255,0.12);
+}
+
+body.dark-mode .theme-toggle-glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.2),
+              0 4px 20px rgba(0, 0, 0, 0.2),
+              0 0 0 1px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .theme-toggle-glass:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08));
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.3),
+              0 6px 25px rgba(0, 0, 0, 0.25),
+              0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* Update glass buttons to match navbar style */
+.glass-button {
+  background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.3));
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 16px;
+  box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.6),
+              0 4px 15px rgba(0, 0, 0, 0.08),
+              0 0 0 1px rgba(255,255,255,0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+
+.glass-button:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.7),
+              0 6px 20px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(255,255,255,0.15);
+}
+
+body.dark-mode .glass-button {
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.2),
+              0 4px 15px rgba(0, 0, 0, 0.2),
+              0 0 0 1px rgba(255,255,255,0.08);
+}
+
+body.dark-mode .glass-button:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.08));
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.3),
+              0 6px 20px rgba(0, 0, 0, 0.25),
+              0 0 0 1px rgba(255,255,255,0.12);
+}
+
+/* Navbar link color transitions */
+.navbar-links a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.navbar-scrolled .navbar-links a {
+  color: #111111;
+}
+
+body.dark-mode .navbar-scrolled .navbar-links a {
+  color: #ffffff;
+}
+
+.navbar-links a:hover {
+  opacity: 0.9;
+}
+
+/* Active link styles */
+.navbar-links a.font-semibold {
+  opacity: 1;
+}
+
+.navbar-scrolled .navbar-links a.font-semibold {
+  opacity: 1;
+}
+
+/* Primary Glass Button - Consistent across modes */
+.primary-glass-button {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.9));
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.5),
+              0 4px 15px rgba(37, 99, 235, 0.3),
+              0 0 0 1px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.primary-glass-button:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 1), rgba(37, 99, 235, 1));
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.7),
+              0 6px 20px rgba(37, 99, 235, 0.4),
+              0 0 0 1px rgba(59, 130, 246, 0.4);
+}
+
+/* Dark mode styles remain the same for this button */
+body.dark-mode .primary-glass-button {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.5),
+              0 4px 15px rgba(37, 99, 235, 0.3),
+              0 0 0 1px rgba(59, 130, 246, 0.3);
+}
+
+body.dark-mode .primary-glass-button:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 1), rgba(37, 99, 235, 1));
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.7),
+              0 6px 20px rgba(37, 99, 235, 0.4),
+              0 0 0 1px rgba(59, 130, 246, 0.4);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .container.mx-auto {
+    position: relative;
+  }
+
+  .navbar-glass {
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    max-width: 90%;
+    margin: 0.5rem auto;
+    gap: 1rem;
+  }
+
+  .navbar-glass .flex.items-center.gap-4 {
+    flex-shrink: 0;
+  }
+
+  .navbar-glass img {
+    max-height: 30px;
+  }
+
+  .navbar-glass a.text-2xl {
+    font-size: 1.2rem;
+  }
+
+  .theme-toggle-glass {
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+  }
+
+  .navbar-glass .btn,
+  .navbar-glass button {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* Ensure mobile menu button is properly aligned */
+  .md\:hidden.text-2xl {
+    margin-left: 1rem;
+  }
+
+  /* Mobile menu styling */
+  .navbar-glass + .navbar-glass {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
